@@ -17,7 +17,8 @@ public class DepartmentController {
 
     @PostMapping("/submit")
     public ResponseEntity<Department>submit(@RequestBody Department department){
-        return ResponseEntity.ok().body(repo.save(department));
+        repo.save(department);
+        return ResponseEntity.ok().body(department);
     }
     @GetMapping("/dept")
     public ResponseEntity<List<Department>>getalldept()

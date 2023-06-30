@@ -50,6 +50,7 @@ public class UserController {
         List<Department> d=restTemplate.getForObject(url,List.class);
         return ResponseEntity.ok().body(d);
     }
+
     @PostMapping("/POST")
     public ResponseEntity<Department> sub(@RequestBody Department d1){
         String url="http://localhost:8081/department/submit";
